@@ -24,86 +24,84 @@ const sideProject: IProject.Payload = {
         {
           content: 'NextAuth 토큰 갱신 로직 개선하여 끊김 없는 사용자 경험 제공',
           postHref: 'https://hjdevlog0.tistory.com/11',
-          descriptions: [
-            // {
-            //   content: 'NextAuth를 활용하여 카카오 소셜 로그인을 구현했으며, 서버 사이드에서 사용자 인증과 채널 정보를 검증해 상황에 따라 리다이렉트 처리',
-            //   postHref: '',
-            // },
-            // {
-            //   content: 'OAuth 지원 및 효율적인 토큰 관리 기능을 제공하는 NextAuth를 도입',
-            //   postHref: '',
-            // },
-
-            // {
-            //   content:
-            //     'getServerSession을 사용하여 서버 사이드에서 기존 사용자 여부 및 채널 개수를 검증하고, 상황에 따른 리다이렉트 처리',
-            //   postHref: '',
-            // },
-            // {
-            //   content:
-            //     '토큰 만료 시 refreshToken을 활용해 자동 로그인 유지 기능 구현하며 편리한 사용자 경험을 제공',
-            //   postHref: '',
-            // },
-            // {
-            //   content:
-            //     '토큰 여부에 따라 middleware를 활용하여 인증이 필요한 페이지에 대한 접근 제어 구현',
-            // },
-            {
-              content:
-                '카카오 소셜 로그인을 구현하며, 서버 사이드에서 사용자 인증과 채널 정보를 검증해 상황에 따라 리다이렉트 처리',
-              postHref: '',
-            },
-            {
-              content:
-                '사용자가 아무 액션 없이 머무는 동안 토큰 만료 시점에도 jwt 콜백이 실행되지 않아 만료된 세션이 유지되는 이슈 -> 주기적으로 만료를 체크하여 useSession 훅의 update를 호출함으로써 jwt 콜백을 실행하고 세션을 갱신하며 해결',
-              postHref: '',
-            },
-            // {
-            //   content:
-            //     '주기적으로 토큰 만료를 체크하여 useSession 훅의 update를 호출함으로써 jwt 콜백을 실행하고 세션을 갱신하며 해결',
-            //   postHref: '',
-            // },
-          ],
-          weight: 'SEMI_BOLD',
+          // descriptions: [
+          // // {
+          // //   content: 'NextAuth를 활용하여 카카오 소셜 로그인을 구현했으며, 서버 사이드에서 사용자 인증과 채널 정보를 검증해 상황에 따라 리다이렉트 처리',
+          // //   postHref: '',
+          // // },
+          // // {
+          // //   content: 'OAuth 지원 및 효율적인 토큰 관리 기능을 제공하는 NextAuth를 도입',
+          // //   postHref: '',
+          // // },
+          //
+          // // {
+          // //   content:
+          // //     'getServerSession을 사용하여 서버 사이드에서 기존 사용자 여부 및 채널 개수를 검증하고, 상황에 따른 리다이렉트 처리',
+          // //   postHref: '',
+          // // },
+          // // {
+          // //   content:
+          // //     '토큰 만료 시 refreshToken을 활용해 자동 로그인 유지 기능 구현하며 편리한 사용자 경험을 제공',
+          // //   postHref: '',
+          // // },
+          // // {
+          // //   content:
+          // //     '토큰 여부에 따라 middleware를 활용하여 인증이 필요한 페이지에 대한 접근 제어 구현',
+          // // },
+          // {
+          // content:
+          // '카카오 소셜 로그인을 구현하며, 서버 사이드에서 사용자 인증과 채널 정보를 검증해 상황에 따라 리다이렉트 처리',
+          // postHref: '',
+          // },
+          // {
+          // content:
+          // '사용자가 아무 액션 없이 머무는 동안 토큰 만료 시점에도 jwt 콜백이 실행되지 않아 만료된 세션이 유지되는 이슈 -> 주기적으로 만료를 체크하여 useSession 훅의 update를 호출함으로써 jwt 콜백을 실행하고 세션을 갱신하며 해결',
+          // postHref: '',
+          // },
+          // // {
+          // //   content:
+          // //     '주기적으로 토큰 만료를 체크하여 useSession 훅의 update를 호출함으로써 jwt 콜백을 실행하고 세션을 갱신하며 해결',
+          // //   postHref: '',
+          // // },
+          // ],
         },
         {
-          content: '퍼널(Funnel) 패턴을 활용한 회원가입 과정 플로우 구축',
+          content:
+            '퍼널(Funnel) 패턴을 활용한 회원가입 과정 플로우 구축하여 코드 흐름 파악 및 전역 상태 관리 개선',
           postHref: 'https://hjdevlog0.tistory.com/12',
-          descriptions: [
-            {
-              content:
-                '코드 흐름 파악과 전역 상태 관리의 어려움을 개선하고자 퍼널(Funnel) 패턴을 도입',
-              postHref: '',
-            },
-            {
-              content:
-                '퍼널(Funnel) 패턴을 적용하여 회원 등록 과정(닉네임 설정, 채널 생성, 초대 코드 입력)을 단계별 진행 가능하도록 설계',
-              postHref: '',
-            },
-
-            {
-              content:
-                'react-hook-form과 zodResolver를 도입하여 각 퍼널의 유효성 검증을 상위 컴포넌트에서 통합적으로 관리하도록 개선함.',
-            },
-          ],
-          weight: 'SEMI_BOLD',
+          // descriptions: [
+          // {
+          // content:
+          // '코드 흐름 파악과 전역 상태 관리의 어려움을 개선하고자 퍼널(Funnel) 패턴을 도입',
+          // postHref: '',
+          // },
+          // {
+          // content:
+          // '퍼널(Funnel) 패턴을 적용하여 회원 등록 과정(닉네임 설정, 채널 생성, 초대 코드 입력)을 단계별 진행 가능하도록 설계',
+          // postHref: '',
+          // },
+          //
+          // {
+          // content:
+          // 'react-hook-form과 zodResolver를 도입하여 각 퍼널의 유효성 검증을 상위 컴포넌트에서 통합적으로 관리하도록 개선함.',
+          // },
+          // ],
         },
-        {
-          content: '질문 및 답변 확인 페이지 개발',
-          weight: 'SEMI_BOLD',
-
-          descriptions: [
-            {
-              content:
-                '선택한 탭(전체, 친구 시그널, 내 시그널)에 대한 정보는 URL로 상태를 관리하였고, startTransition을 활용하여 반응성을 유지함',
-            },
-          ],
-        },
+        // {
+        // content: '질문 및 답변 확인 페이지 개발',
+        // weight: 'SEMI_BOLD',
+        //
+        // descriptions: [
+        // {
+        // content:
+        // '선택한 탭(전체, 친구 시그널, 내 시그널)에 대한 정보는 URL로 상태를 관리하였고, startTransition을 활용하여 반응성을 유지함',
+        // },
+        // ],
+        // },
       ],
     },
     {
       title: '올인원 면접 서비스 SULSUL',
-      marginTop: '170px',
       githubUrl: 'https://github.com/sulsulsulsul/sulsul',
       startedAt: '2024-07',
       endedAt: '2024-10',
@@ -111,6 +109,9 @@ const sideProject: IProject.Payload = {
         '나의 자소서 기반으로 면접질문 예측 및 면접기출 100선 제공 서비스  (PM/디자이너  1 BE 2 FE 4)',
       skill: ['TypeScript', 'Next.js', 'Tanstack Query', 'Zustand', 'React Hook Form', 'Tailwind'],
       descriptions: [
+        {
+          content: '기출문제 페이지 개발',
+        },
         // {
         //   content: 'useIntervalValue 커스텀 훅을 활용한 타이머 리렌더링 개선',
         //   postHref:
@@ -131,48 +132,47 @@ const sideProject: IProject.Payload = {
         //   weight: 'SEMI_BOLD',
         // },
         {
-          content: 'CDN region 최적화 -> 서버 응답 속도 21% 개선  (lighthouse 56점 -> 86점)',
+          content:
+            'CDN region 최적화 -> 서버 응답 속도 21% 개선으로 사용자 피드백 개선(lighthouse 56점 -> 86점)',
           postHref:
             'https://velog.io/@hyunjun9788/varcel-%EB%B0%B0%ED%8F%AC-%ED%9B%84-%EC%86%8D%EB%8F%84%EA%B0%80-%EB%8A%90%EB%A0%A4%EC%A7%84-%EC%9D%B4%EC%8A%88',
-          descriptions: [
-            {
-              content: '사용자들로부터 서비스 속도가 느리다는 피드백을 받음',
-              postHref: '',
-            },
-            {
-              content:
-                '네트워크 요청 및 리소스 로딩 시간을 분석한 결과, 배포 환경에서의 설정이 주요 원인인 점을 파악',
-              postHref: '',
-            },
-            {
-              content: '사용자와 가장 가까운 서버에서 리소스를 제공하도록 CDN region 재설정',
-              postHref: '',
-            },
-
-            // {
-            //   content: '반응형 디자인 구현을 통한 다양한 기기의 접근성 확보',
-            // },
-          ],
-          weight: 'SEMI_BOLD',
+          // descriptions: [
+          // {
+          // content: '사용자들로부터 서비스 속도가 느리다는 피드백을 받음',
+          // postHref: '',
+          // },
+          // {
+          // content:
+          // '네트워크 요청 및 리소스 로딩 시간을 분석한 결과, 배포 환경에서의 설정이 주요 원인인 점을 파악',
+          // postHref: '',
+          // },
+          // {
+          // content: '사용자와 가장 가까운 서버에서 리소스를 제공하도록 CDN region 재설정',
+          // postHref: '',
+          // },
+          //
+          // // {
+          // //   content: '반응형 디자인 구현을 통한 다양한 기기의 접근성 확보',
+          // // },
+          // ],
         },
 
         {
-          content: '전체 답변에 대해 무한 스크롤 기능 구현',
-          weight: 'SEMI_BOLD',
+          content: '전체 답변에 대해 무한 스크롤 기능 반영하여 사용자 경험 개선',
           postHref:
             'https://velog.io/@hyunjun9788/%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%8B%A4%EC%9D%8C-%ED%8E%98%EC%9D%B4%EC%A7%80%EA%B9%8C%EC%A7%80-%EB%AF%B8%EB%A6%AC-%EA%B0%80%EC%A0%B8%EC%98%A4%EB%8A%94-%EC%9D%B4%EC%8A%88',
-          descriptions: [
-            {
-              content:
-                '답변 개수가 많아질 경우 불필요한 데이터 fetching으로 초기 로딩 속도 저하로 이어짐',
-            },
-            {
-              content: 'useInfiniteQuery 훅의 캐싱 기능을 활용하여 무한 스크롤을 구현',
-            },
-            {
-              content: '다음 답변 로딩에 대해 스켈레톤 UI를 적용하며 사용자 경험을 개선',
-            },
-          ],
+          // descriptions: [
+          // {
+          // content:
+          // '답변 개수가 많아질 경우 불필요한 데이터 fetching으로 초기 로딩 속도 저하로 이어짐',
+          // },
+          // {
+          // content: 'useInfiniteQuery 훅의 캐싱 기능을 활용하여 무한 스크롤을 구현',
+          // },
+          // {
+          // content: '다음 답변 로딩에 대해 스켈레톤 UI를 적용하며 사용자 경험을 개선',
+          // },
+          // ],
         },
         // {
         //   content:
@@ -223,43 +223,48 @@ const sideProject: IProject.Payload = {
         {
           content: '아이콘, 이미지, 상품 카드 UI를 모듈화하여 팀 개발 생산성 향상',
           postHref: 'https://velog.io/@hyunjun9788/WDYTA-Icon-Image',
-          weight: 'SEMI_BOLD',
-          descriptions: [
-            {
-              content:
-                '프로젝트 내 아이콘과 이미지 리소스가 많아지면서, 이를 개별적으로 불러오고 관리하는 방식이 비효율적이라 판단',
-            },
-            {
-              content:
-                'TypeScript + SVGR 도입하여 아이콘·이미지 컴포넌트화, props 기반 타입 안전성 확보',
-            },
-            // {
-            //   content:
-            //     'SVG 컴포넌트에 타입 기반 속성을 적용하며, 아이콘 및 이미지명을 props로 전달',
-            // },
-            {
-              content: 'TSDoc과 PR로 스타일 가이드를 문서화해 팀 내 사용 기준 공유',
-            },
-          ],
+          // descriptions: [
+          // {
+          // content:
+          // '프로젝트 내 아이콘과 이미지 리소스가 많아지면서, 이를 개별적으로 불러오고 관리하는 방식이 비효율적이라 판단',
+          // },
+          // {
+          // content:
+          // 'TypeScript + SVGR 도입하여 아이콘·이미지 컴포넌트화, props 기반 타입 안전성 확보',
+          // },
+          // // {
+          // //   content:
+          // //     'SVG 컴포넌트에 타입 기반 속성을 적용하며, 아이콘 및 이미지명을 props로 전달',
+          // // },
+          // {
+          // content: 'TSDoc과 PR로 스타일 가이드를 문서화해 팀 내 사용 기준 공유',
+          // },
+          // ],
+        },
+        {
+          content:
+            'TypeScript + SVGR 도입하여 아이콘·이미지 컴포넌트화, props 기반 타입 안전성 확보',
+        },
+        {
+          content: 'TSDoc과 PR로 스타일 가이드를 문서화해 팀 내 사용 기준 공유',
         },
         {
           content: '이미지 최적화를 통해 이미지 로딩 시간 1.8s -> 1.1s까지 단축 (약 38% 성능 개선)',
-          weight: 'SEMI_BOLD',
           postHref:
             'https://velog.io/@hyunjun9788/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B5%9C%EC%A0%81%ED%99%94-prefetch',
-          descriptions: [
-            {
-              content: '프로필 이미지 변경 시 용량이 클수록 로딩 지연이 두드러지는 문제 발생',
-            },
-            {
-              content:
-                'fill 사용 시 sizes 기본값 100vw로 인해 실제 표시 크기와 무관하게 뷰포트 너비 기준 이미지를 요청한 것이 원인',
-            },
-            {
-              content:
-                'sizes에 요소별 실제 렌더링 크기를 지정하고 next.config의 imageSizes·deviceSizes를 정리',
-            },
-          ],
+          // descriptions: [
+          // {
+          // content: '프로필 이미지 변경 시 용량이 클수록 로딩 지연이 두드러지는 문제 발생',
+          // },
+          // {
+          // content:
+          // 'fill 사용 시 sizes 기본값 100vw로 인해 실제 표시 크기와 무관하게 뷰포트 너비 기준 이미지를 요청한 것이 원인',
+          // },
+          // {
+          // content:
+          // 'sizes에 요소별 실제 렌더링 크기를 지정하고 next.config의 imageSizes·deviceSizes를 정리',
+          // },
+          // ],
         },
         // {
         //   content: '프로필 페이지 개발',

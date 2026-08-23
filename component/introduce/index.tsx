@@ -36,17 +36,30 @@ function Component() {
             동료와 사용자의 시간을 아끼는 프론트엔드 개발자{' '}
             <span style={{ color: '#3c78d8' }}>남현준</span>입니다.
           </h3>
-          <p style={{ marginTop: '24px', marginBottom: 0 }}>
-            제가 개발한 공통 모듈을 동료들이 사용할 때,
-            <span style={{ fontStyle: 'italic', color: '#898e96' }}>
-              {' '}
-              &apos;현준님 덕분에 편하게 개발했어요.&apos;
-            </span>
-            라는 말을 들으면 큰 보람을 느낍니다.
-            <br />
-            사용자 입장이 되어 고민하는 것을 좋아하며, 사용자가 멈칫하거나 기다리는 순간을 줄이는
-            것을 중요하게 생각합니다.
-          </p>
+          <ul
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '8px',
+              marginTop: '24px',
+              marginBottom: 0,
+              paddingLeft: '20px',
+            }}
+          >
+            <li>
+              제가 개발한 공통 모듈을 동료들이 사용할 때,
+              <span style={{ fontStyle: 'italic', color: '#898e96' }}>
+                {' '}
+                &apos;현준님 덕분에 편하게 개발했어요.&apos;
+              </span>
+              라는 말을 들으면 큰 보람을 느낍니다.
+            </li>
+            <li>
+              사용자 입장이 되어 고민하는 것을 좋아하며, 사용자가 멈칫하거나 기다리는 순간을 줄이는
+              것을 중요하게 생각합니다.
+            </li>
+            <li>이미지 최적화로 LCP 지표를 2.8초에서 2.3초로 약 18% 단축한 경험이 있습니다.</li>
+          </ul>
           {/* <p className="text-right">
             <small>Latest Updated</small>{' '}
             <Badge color="secondary">

@@ -26,7 +26,7 @@ const project: IProject.Payload = {
       ],
       descriptions: [
         {
-          content: '휴대폰 SMS 본인인증 로그인 플로우 전담 개발',
+          content: 'SMS 본인인증 로그인 플로우 전담 개발',
           // 상세 내용은 이력서에 노출하지 않고 면접·포트폴리오에서 설명한다.
           // descriptions: [
           //   {
@@ -59,6 +59,19 @@ const project: IProject.Payload = {
           //   },
           // ],
         },
+        {
+          content:
+            '토큰 만료 시 동시 요청으로 인한 재발급 API 중복 호출 문제를 isRefreshing 플래그와 대기 큐로 해결',
+        },
+        {
+          content: '본인인증 폼 공통화로 팀원이 예약 페이지에서 별도 구현 없이 재사용',
+        },
+        {
+          content: '로그인 완료 후 직전 화면으로 복귀 처리해 사용 흐름 단절 최소화',
+        },
+        {
+          content: '팀 내 논의로만 공유되던 프론트엔드 코드 컨벤션을 Cursor Rules로 종합해 문서화',
+        },
         // {
         //   content: '마이페이지 폴더 구조 설계 및 API 연동',
         //   weight: 'SEMI_BOLD',
@@ -73,29 +86,29 @@ const project: IProject.Payload = {
         //     },
         //   ],
         // },
-        {
-          content: 'FSD 아키텍처 계층 구조 설계 및 공통 기반 정비',
-          // descriptions: [
-          //   {
-          //     content:
-          //       'pages/widgets/features/entities/shared 계층 위반 정리 및 로그인·마이페이지 구조 재설계',
-          //   },
-          //   {
-          //     content:
-          //       '공통 컴포넌트(Input, Checkbox, Popup)와 재사용 커스텀 훅을 분리하고, 매직 스트링 상수화 및 any 타입 제거',
-          //   },
-          //   {
-          //     content: '팀 내 논의로만 공유되던 프론트엔드 코드 컨벤션을 종합해 Cursor Rules로 문서화',
-          //   },
-          // ],
-        },
+        // {
+        // content: 'FSD 아키텍처 계층 구조 설계 및 공통 기반 정비',
+        // // descriptions: [
+        // //   {
+        // //     content:
+        // //       'pages/widgets/features/entities/shared 계층 위반 정리 및 로그인·마이페이지 구조 재설계',
+        // //   },
+        // //   {
+        // //     content:
+        // //       '공통 컴포넌트(Input, Checkbox, Popup)와 재사용 커스텀 훅을 분리하고, 매직 스트링 상수화 및 any 타입 제거',
+        // //   },
+        // //   {
+        // //     content: '팀 내 논의로만 공유되던 프론트엔드 코드 컨벤션을 종합해 Cursor Rules로 문서화',
+        // //   },
+        // // ],
+        // },
       ],
     },
     {
       title: '아비쥬 차트 프로그램 (EMR)',
       startedAt: '2025-07',
       endedAt: '2026-04',
-      detail: '피부과 전자차트 프로그램 - 접수 현황 보드 · 코드 관리 · 영업일 관리 담당',
+      detail: '피부과 전자차트 프로그램 - 접수 현황 보드 · 코드 관리 담당',
       skill: [
         'TypeScript',
         'React',
@@ -107,36 +120,22 @@ const project: IProject.Payload = {
       ],
       descriptions: [
         {
-          content: '접수 현황 보드 신규 개발',
-          weight: 'SEMI_BOLD',
-          descriptions: [
-            {
-              content:
-                '예약·접수·상담·준비·시술·퇴원 6단계 컬럼형 보드와 사이드바(날짜 선택, 근무자 현황, 공지) 신규 개발',
-            },
-            // {
-            //   content:
-            //     '날짜 선택·직접 입력 캘린더와 고객명 검색을 조회 조건으로 묶어, 조건 변경 시 보드 카드와 근무자 현황이 함께 갱신되도록 데이터 흐름 구성',
-            // },
-          ],
+          content: '예약·접수·상담·준비·시술·퇴원 6단계 컬럼형 접수 현황 보드 신규 개발',
         },
         {
-          content: '코드 관리 페이지 리뉴얼 및 영업일 · 예약 허용량 관리 기능 개발',
-          weight: 'SEMI_BOLD',
-          descriptions: [
-            {
-              content:
-                '코드 유형별 사용지점 · 가격 설정 팝업 컴포넌트를 조회/수정 모드로 분리하여 개발',
-            },
-            {
-              content:
-                '무한 스크롤 목록을 page 상태로 직접 누적하던 구조를 useInfiniteQuery 기반으로 전환하여,\n코드명 수정 후에도 목록에 이전 값이 남던 문제 해결',
-            },
-            {
-              content:
-                '캘린더 기반 영업일 · 휴무 · 예외 관리와 요일별 · 날짜별 예약 허용량 템플릿 시스템을 구현하고,\n저장 시 수정된 템플릿만 필터링해 요청하도록 처리',
-            },
-          ],
+          content:
+            '무한 스크롤 목록을 page 상태로 직접 누적하던 구조를 useInfiniteQuery 기반으로 전환해,\n코드명 수정 후 목록에 이전 값이 남던 문제 해결',
+        },
+        // {
+        // content: '캘린더 기반 영업일·휴무·예외 관리와 요일별·날짜별 예약 허용량 템플릿 개발',
+        // },
+        {
+          content:
+            '6개 이상 화면에 중복 구현되어 있던 고객 검색 기능을 공통 컴포넌트화하여 재사용성 및 유지보수성 개선',
+        },
+        {
+          content:
+            '프로젝트 전반에 걸쳐 과도했던 props drilling을 전역 상태관리로 리팩토링해 코드 가독성 및 유지보수성 개선',
         },
         // {
         //   content: '데이터 정합성과 사용자 실수를 방지하는 저장 플로우 설계',
@@ -160,20 +159,6 @@ const project: IProject.Payload = {
         //     },
         //   ],
         // },
-        {
-          content: '공통화 리팩토링을 통한 중복 제거',
-          weight: 'SEMI_BOLD',
-          descriptions: [
-            {
-              content:
-                '화면마다 중복 구현돼 있던 고객 검색 UI를 단일 공통 컴포넌트로 통합,\n예약 등록 · 컴플레인 상담 · 멤버십 양도 · 고객 등록 · 현장 접수 등 6개 이상 화면에서 재사용',
-            },
-            {
-              content:
-                'props drilling 으로 전달되던 본원 여부(isHeadOffice) 판별 값을 Recoil atom 으로 대체해\n고객 · 컴플레인 · 예약현황 페이지의 의존 구조를 정리',
-            },
-          ],
-        },
       ],
     },
   ],
