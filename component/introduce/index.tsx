@@ -58,7 +58,10 @@ function Component() {
               사용자 입장이 되어 고민하는 것을 좋아하며, 사용자가 멈칫하거나 기다리는 순간을 줄이는
               것을 중요하게 생각합니다.
             </li>
-            <li>이미지 최적화로 LCP 지표를 2.8초에서 2.3초로 약 18% 단축한 경험이 있습니다.</li>
+            <li>
+              이미지 최적화로 LCP 지표를 2.8초에서 2.3초로 약{' '}
+              <span style={{ fontWeight: 600 }}>18%</span> 단축한 경험이 있습니다.
+            </li>
           </ul>
           {/* <p className="text-right">
             <small>Latest Updated</small>{' '}
