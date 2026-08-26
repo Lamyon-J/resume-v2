@@ -39,12 +39,19 @@ export function CommonDescription({
 function DescriptionRecursion({
   descriptions,
 }: PropsWithChildren<{ descriptions: IRow.Description[] }>) {
+  // [상황] / [수행] / [결과] 묶음은 상위 제목과 같은 위치에서 시작하도록 들여쓰기를 없앤다.
+  const isLabelGroup = descriptions.some((description) => description.label);
+
   return (
-    <ul>
+    <ul style={isLabelGroup ? { paddingLeft: 0 } : undefined}>
       {descriptions.map((description, index) => {
         return (
           <>
-            <Description description={description} key={index.toString()} />
+            <Description
+              description={description}
+              inLabelGroup={isLabelGroup}
+              key={index.toString()}
+            />
             {description.descriptions ? (
               <DescriptionRecursion
                 descriptions={description.descriptions}
@@ -60,35 +67,40 @@ function DescriptionRecursion({
   );
 }
 
-function Description({ description }: PropsWithChildren<{ description: IRow.Description }>) {
-  const { content, href, postImage, postHref, weight } = description;
+function Description({
+  description,
+  inLabelGroup,
+}: PropsWithChildren<{ description: IRow.Description; inLabelGroup?: boolean }>) {
+  const { content, href, postImage, postHref, weight, label } = description;
+  // 라벨 묶음에 섞인 일반 항목은 불릿을 안쪽에 두어 라벨과 같은 위치에서 시작한다.
+  const liStyle = getLiStyle(weight, label, inLabelGroup && !label);
 
   const component = (() => {
     if (href && postImage) {
       return (
-        <li style={getLiStyle(weight)}>
+        <li style={liStyle}>
           <HrefTargetBlank url={href} text={content} /> <img src={postImage} alt={postImage} />
         </li>
       );
     }
     if (href) {
       return (
-        <li style={getLiStyle(weight)}>
+        <li style={liStyle}>
           <HrefTargetBlank url={href} text={content} />
         </li>
       );
     }
     if (postHref && postImage) {
       return (
-        <li style={getLiStyle(weight)}>
-          {content} <HrefTargetBlank url={postHref} text={postHref} />
+        <li style={liStyle}>
+          {renderContent(content)} <HrefTargetBlank url={postHref} text={postHref} />
         </li>
       );
     }
     if (postHref) {
       return (
-        <li style={getLiStyle(weight)}>
-          {content}
+        <li style={liStyle}>
+          {renderContent(content)}
           <a
             href={postHref}
             target="_blank"
@@ -109,15 +121,15 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     }
     if (postImage) {
       return (
-        <li style={getLiStyle(weight)}>
-          {content} <img src={postImage} alt={postImage} />
+        <li style={liStyle}>
+          {renderContent(content)} <img src={postImage} alt={postImage} />
         </li>
       );
     }
     return (
       <>
         <meta name="format-detection" content="telephone=no" />
-        <li style={getLiStyle(weight)}>{content}</li>
+        <li style={liStyle}>{renderContent(content)}</li>
       </>
     );
   })();
@@ -125,9 +137,48 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
   return component;
 }
 
+/** content 안의 `**강조**` 를 MEDIUM 으로 그린다. */
+function renderContent(content: string) {
+  const tokens = content.split(/\*\*(.+?)\*\*/g);
+
+  if (tokens.length === 1) {
+    return content;
+  }
+
+  // split 의 홀수 인덱스가 `**` 로 감싸인 부분이다.
+  return tokens.map((token, index) =>
+    index % 2 === 1 ? (
+      <span key={index.toString()} style={{ fontWeight: 500 }}>
+        {token}
+      </span>
+    ) : (
+      token
+    ),
+  );
+}
+
 /** content 안의 `\n` 을 줄바꿈으로 그리기 위해 whiteSpace 를 함께 지정한다. */
-function getLiStyle(weight?: IRow.Description['weight']): CSSProperties {
-  return { whiteSpace: 'pre-line', ...getFontWeight(weight) };
+function getLiStyle(
+  weight?: IRow.Description['weight'],
+  label?: IRow.Description['label'],
+  insideMarker?: boolean,
+): CSSProperties {
+  return {
+    whiteSpace: 'pre-line',
+    ...(insideMarker ? { listStylePosition: 'inside' as const } : {}),
+    ...getFontWeight(weight),
+    ...getLabelStyle(label),
+  };
+}
+
+/** [상황] / [수행] / [결과] 라벨은 상위 제목과 달리 색·크기를 그대로 두고 굵기만 올린다. */
+function getLabelStyle(label?: IRow.Description['label']): CSSProperties {
+  if (!label) {
+    return {};
+  }
+
+  // 라벨 줄은 불릿 없이 노출한다.
+  return { fontWeight: 600, marginTop: '10px', listStyleType: 'none' };
 }
 
 function getFontWeight(weight?: IRow.Description['weight']): CSSProperties {

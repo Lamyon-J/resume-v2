@@ -79,6 +79,13 @@ export declare namespace IRow {
     postHref?: string;
 
     /**
+     * ### [상황] / [수행] / [결과] 같은 단계 라벨
+     *
+     * @description `true` 일 경우 `weight` 와 달리 색·크기는 그대로 두고 굵기만 올린다.
+     */
+    label?: boolean;
+
+    /**
      * ### Depth 가 하나 더 들어가는 Description
      *
      * @description 여러 계층을 가지는 `<ul>` 태그 구현을 위해 Recursion 형태로 구현됨
