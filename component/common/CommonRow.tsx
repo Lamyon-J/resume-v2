@@ -44,7 +44,7 @@ export function CommonRows({
         <hr style={{ marginTop: '24px', marginBottom: '24px' }} />
       )}
       {type === 'experience' && index > 0 ? (
-        <hr style={{ marginTop: '12px', marginBottom: '20px' }} />
+        <hr style={{ marginTop: '12px', marginBottom: '14px' }} />
       ) : (
         ''
       )}

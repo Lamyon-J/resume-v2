@@ -3,7 +3,7 @@ import { IProject } from '../component/project/IProject';
 const sideProject: IProject.Payload = {
   disable: false,
   title: 'SIDE PROJECT',
-  marginTop: '50px',
+  marginTop: '70px',
   list: [
     {
       title: '피키토키(Picki Talki)',
