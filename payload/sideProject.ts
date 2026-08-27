@@ -11,7 +11,7 @@ const sideProject: IProject.Payload = {
       startedAt: '2024-12',
       endedAt: '2025-02',
       detail:
-        '한때 가까웠지만 소원해진 그룹을 자연스럽게 다시 연결하고 추억을 함께 쌓는 관계 회복 서비스 ​ (디자이너 2 BE 2 FE 2)',
+        '소원해진 관계를 다시 연결하고 추억을 쌓는 관계 회복 서비스 (디자이너 2 · BE 2 · FE 2)',
       skill: [
         'TypeScript',
         'Next.js',
