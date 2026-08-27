@@ -71,9 +71,9 @@ function Description({
   description,
   inLabelGroup,
 }: PropsWithChildren<{ description: IRow.Description; inLabelGroup?: boolean }>) {
-  const { content, href, postImage, postHref, weight, label } = description;
+  const { content, href, postImage, postHref, weight, label, marginTop } = description;
   // 라벨 묶음에 섞인 일반 항목은 불릿을 안쪽에 두어 라벨과 같은 위치에서 시작한다.
-  const liStyle = getLiStyle(weight, label, inLabelGroup && !label);
+  const liStyle = getLiStyle(weight, label, inLabelGroup && !label, marginTop);
 
   const component = (() => {
     if (href && postImage) {
@@ -162,12 +162,15 @@ function getLiStyle(
   weight?: IRow.Description['weight'],
   label?: IRow.Description['label'],
   insideMarker?: boolean,
+  marginTop?: IRow.Description['marginTop'],
 ): CSSProperties {
   return {
     whiteSpace: 'pre-line',
     ...(insideMarker ? { listStylePosition: 'inside' as const } : {}),
     ...getFontWeight(weight),
     ...getLabelStyle(label),
+    // 위 두 헬퍼가 지정한 기본 여백을 덮어써야 하므로 마지막에 편다.
+    ...(marginTop ? { marginTop } : {}),
   };
 }
 

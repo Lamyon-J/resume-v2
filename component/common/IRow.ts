@@ -79,6 +79,13 @@ export declare namespace IRow {
     postHref?: string;
 
     /**
+     * ### 항목 상단 추가 여백
+     *
+     * @description `undefined` 일 경우 추가 여백이 없다. 인쇄 시 페이지 나눔 위치를 조정할 때 사용한다.
+     */
+    marginTop?: string;
+
+    /**
      * ### [상황] / [수행] / [결과] 같은 단계 라벨
      *
      * @description `true` 일 경우 `weight` 와 달리 색·크기는 그대로 두고 굵기만 올린다.

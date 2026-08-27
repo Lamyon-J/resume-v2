@@ -80,6 +80,7 @@ const project: IProject.Payload = {
         {
           content: '액세스 토큰 자동 재발급 구조 설계',
           weight: 'SEMI_BOLD',
+          marginTop: '150px',
           descriptions: [
             {
               content: '[상황]',
