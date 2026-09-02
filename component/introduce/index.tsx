@@ -35,7 +35,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
           {payload.contents.map((_, index) => (
             <p key={index.toString()} style={{ marginBottom: 0 }}>
               <h3 style={{ fontWeight: 'bold', fontSize: '20px' }}>
-                옆에 있는 동료들을 최우선으로 생각하는 프론트엔드 개발자{' '}
+                동료와 사용자의 시간을 아끼는 프론트엔드 개발자{' '}
                 <span style={{ color: '#3c78d8' }}>남현준</span>입니다.
               </h3>
               <h3
@@ -51,20 +51,20 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
                   padding: '4px 20px',
                 }}
               >
-                <li>
+                {/* <li>
                   동료들이 제 코드를 이해하고 활용하는 데 들이는 시간을 1초라도 줄이기 위해,
                   <br />
                   <span style={{ fontWeight: 600 }}>가독성과 직관성</span>을 최우선으로 고려하며
                   개발에 임합니다.
-                </li>
+                </li> */}
                 <li>
-                  제가 개발한 공통 모듈을 동료들이 사용할 때,
+                  본인인증 폼과 고객 검색 기능을 공통화해 반복 개발을 줄인 경험이 있으며,
+                  <br /> 동료에게
                   <span style={{ fontStyle: 'italic', color: '#898e96' }}>
                     {' '}
-                    &apos;현준님 덕분에 편하게 개발했어요.&apos;
+                    &ldquo;현준님 덕분에 편하게 개발했어요.&rdquo;
                   </span>
-                  라는 말을 들으면
-                  <br />큰 보람을 느낍니다.
+                  라는 말을 들을 때 큰 보람과 동기를 얻습니다.
                 </li>
                 <li>
                   팀 내 논의로만 공유되던 프론트엔드 코드 컨벤션을{' '}
@@ -84,7 +84,7 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
               리뷰 시 스타일 가이드를 공유하고, 추가적인 스타일 적용도 가능하도록 유연성을
               확보했습니다. 이를 통해 팀원들로부터 긍정적인 피드백을 받을 수 있었습니다. */}
               <h3 style={{ fontWeight: 600, fontSize: '18px', color: '#3c78d8' }}>
-                사용자 경험을 위한 성능 개선을 추구합니다.
+                사용자 경험을 위해 성능과 안정성을 함께 고민합니다.
               </h3>
               {/* 마지막 목록이라 bootstrap 의 ul 기본 margin-bottom(1rem) 을 없앤다. */}
               <ul
@@ -97,17 +97,20 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
                 }}
               >
                 <li>
-                  CDN 지역 설정을 최적화하여 서버 응답 속도를 단축하고,{' '}
+                  사용자 피드백을 바탕으로 페이지 로딩 지연을 개선해,{' '}
                   <span style={{ fontWeight: 600 }}>
                     페이지 로딩 속도를 약 21% 개선한 경험이 있습니다.
                   </span>
                 </li>
                 <li>
-                  초기 이미지 로딩 지연 문제를 개선하고자 이미지 최적화 작업을 수행하여,
-                  <br />
+                  이미지 로딩 지연 문제를 개선하고자{' '}
                   <span style={{ fontWeight: 600 }}>
-                    LCP 지표를 2.8초에서 2.3초로 약 18% 단축한 경험이 있습니다.
+                    이미지 로딩 속도를 2.8초에서 2.3초로 약 18% 단축한 경험이 있습니다.
                   </span>
+                </li>
+                <li>
+                  동시 조작·중복 요청 같은 예외 상황을 미리 상상하고 점검하는 것을 중요하게
+                  생각합니다.
                 </li>
               </ul>
             </p>

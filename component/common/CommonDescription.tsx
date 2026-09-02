@@ -81,14 +81,14 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (postHref && postImage) {
       return (
         <li style={getLiStyle(weight)}>
-          {content} <HrefTargetBlank url={postHref} text={postHref} />
+          {renderContent(content)} <HrefTargetBlank url={postHref} text={postHref} />
         </li>
       );
     }
     if (postHref) {
       return (
         <li style={getLiStyle(weight)}>
-          {content}
+          {renderContent(content)}
           <a
             href={postHref}
             target="_blank"
@@ -110,19 +110,39 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
     if (postImage) {
       return (
         <li style={getLiStyle(weight)}>
-          {content} <img src={postImage} alt={postImage} />
+          {renderContent(content)} <img src={postImage} alt={postImage} />
         </li>
       );
     }
     return (
       <>
         <meta name="format-detection" content="telephone=no" />
-        <li style={getLiStyle(weight)}>{content}</li>
+        <li style={getLiStyle(weight)}>{renderContent(content)}</li>
       </>
     );
   })();
 
   return component;
+}
+
+/** content 안의 `**강조**` 를 MEDIUM 으로 그린다. */
+function renderContent(content: string) {
+  const tokens = content.split(/\*\*(.+?)\*\*/g);
+
+  if (tokens.length === 1) {
+    return content;
+  }
+
+  // split 의 홀수 인덱스가 `**` 로 감싸인 부분이다.
+  return tokens.map((token, index) =>
+    index % 2 === 1 ? (
+      <span key={index.toString()} style={{ fontWeight: 500 }}>
+        {token}
+      </span>
+    ) : (
+      token
+    ),
+  );
 }
 
 /** content 안의 `\n` 을 줄바꿈으로 그리기 위해 whiteSpace 를 함께 지정한다. */
