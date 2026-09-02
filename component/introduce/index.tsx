@@ -98,14 +98,12 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
               >
                 <li>
                   사용자 피드백을 바탕으로 페이지 로딩 지연을 개선해,{' '}
-                  <span style={{ fontWeight: 600 }}>
-                    페이지 로딩 속도를 약 21% 개선한 경험이 있습니다.
-                  </span>
+                  <span style={{ fontWeight: 600 }}>페이지 로딩 속도를 약 21% 개선했습니다.</span>
                 </li>
                 <li>
                   이미지 로딩 지연 문제를 개선하고자{' '}
                   <span style={{ fontWeight: 600 }}>
-                    이미지 로딩 속도를 2.8초에서 2.3초로 약 18% 단축한 경험이 있습니다.
+                    이미지 로딩 속도를 2.8초에서 2.3초로 약 18% 단축했습니다.
                   </span>
                 </li>
                 <li>

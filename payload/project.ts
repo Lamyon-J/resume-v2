@@ -27,12 +27,12 @@ const project: IProject.Payload = {
       descriptions: [
         {
           content:
-            '로그인·예약 화면의 본인인증 폼을 단일 컴포넌트로 공통화하고 직접 적용해 반복 개발을 줄이고 **동료의 개발 시간 단축**',
+            '로그인·예약 화면의 본인인증 폼을 단일 컴포넌트로 공통화하고 직접 적용하여 **동료의 개발 시간 단축**',
         },
 
         {
           content:
-            'Axios 인터셉터에서 401 시 refreshToken으로 자동 재발급·원 요청 재시도, 동시 401은 플래그와 대기열로 **중복 갱신 방지**',
+            'Axios 인터셉터에서 401 시 refreshToken으로 자동 재발급·원 요청 재시도 처리, \n 동시 401은 플래그와 대기열로 **중복 갱신 방지**',
         },
         {
           content:
@@ -40,7 +40,7 @@ const project: IProject.Payload = {
         },
         {
           content:
-            '여러 필드의 오류가 동시에 노출되던 문제를 Zod superRefine으로 이름→휴대폰→동의 **순차 검증**되도록 개선',
+            '여러 필드의 오류가 동시에 노출되던 문제를 Zod superRefine을 도입하여, \n 이름→휴대폰→동의 **순차 검증**되도록 개선',
         },
         {
           content:
