@@ -125,7 +125,7 @@ function Description({ description }: PropsWithChildren<{ description: IRow.Desc
   return component;
 }
 
-/** content 안의 `**강조**` 를 MEDIUM 으로 그린다. */
+/** content 안의 `**강조**` 를 SEMI_BOLD 로 그린다. */
 function renderContent(content: string) {
   const tokens = content.split(/\*\*(.+?)\*\*/g);
 
@@ -136,7 +136,7 @@ function renderContent(content: string) {
   // split 의 홀수 인덱스가 `**` 로 감싸인 부분이다.
   return tokens.map((token, index) =>
     index % 2 === 1 ? (
-      <span key={index.toString()} style={{ fontWeight: 500 }}>
+      <span key={index.toString()} style={{ fontWeight: 600 }}>
         {token}
       </span>
     ) : (
