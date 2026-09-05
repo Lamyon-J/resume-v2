@@ -9,7 +9,7 @@ const experience: IExperience.Payload = {
       position: 'FE Developer',
       startedAt: '2025-06',
       endedAt: '2026-04',
-      descriptions: ['피부과 EMR 차트 프로그램 · 온라인 예약 서비스 개발'],
+      descriptions: ['아비쥬 피부과 EMR 차트 프로그램 · 온라인 예약 서비스 개발'],
       skillKeywords: [
         'TypeScript',
         'React',
