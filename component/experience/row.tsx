@@ -28,7 +28,7 @@ export default function ExperienceRow({
             <h4 style={Style.itemTitle}>{item.title}</h4>
             <i style={Style.gray}>{item.position}</i>
             <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-              {createBadges(item.startedAt, item.endedAt)}
+              {createBadges(item.endedAt)}
             </div>
           </div>
           <div className="pt-2">
@@ -117,18 +117,8 @@ function createWorkingPeriod(startedAtString: string, endedAtString?: string) {
   return <h4 style={{ ...Style.gray, ...Style.itemDate }}>{periodTitle}</h4>;
 }
 
-function createBadges(startedAtString: string, endedAtString?: string) {
-  const DATE_FORMAT = Util.LUXON_DATE_FORMAT;
-  const startedAt = DateTime.fromFormat(startedAtString, DATE_FORMAT.YYYY_LL);
+function createBadges(endedAtString?: string) {
   const isWorking = !endedAtString;
-  const endedAt = endedAtString
-    ? DateTime.fromFormat(endedAtString, DATE_FORMAT.YYYY_LL)
-    : undefined;
 
-  return (
-    <>
-      {isWorking ? <Badge color="primary">재직 중</Badge> : ''}
-      <Badge color="info">{Util.getFormattingDuration(startedAt, endedAt)}</Badge>
-    </>
-  );
+  return <>{isWorking ? <Badge color="primary">재직 중</Badge> : ''}</>;
 }
