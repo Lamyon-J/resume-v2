@@ -49,7 +49,7 @@ const sideProject: IProject.Payload = {
       descriptions: [
         {
           content:
-            '속도 저하 피드백에서 배포 환경 설정이 원인임을 파악해 사용자와 가장 가까운 서버에서\n 리소스를 제공하도록 재설정하여**서버 응답 속도 21% 개선 (Lighthouse 56 → 86)**',
+            '속도 저하 피드백에서 배포 환경 설정이 원인임을 파악해 사용자와 가장 가까운 서버에서\n 리소스를 제공하도록 재설정하여** 서버 응답 속도 21% 개선 (Lighthouse 56 → 86)**',
           postHref:
             'https://velog.io/@hyunjun9788/varcel-%EB%B0%B0%ED%8F%AC-%ED%9B%84-%EC%86%8D%EB%8F%84%EA%B0%80-%EB%8A%90%EB%A0%A4%EC%A7%84-%EC%9D%B4%EC%8A%88',
         },

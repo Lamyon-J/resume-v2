@@ -41,37 +41,8 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
               <h3
                 style={{ fontWeight: 600, fontSize: '18px', color: '#3c78d8', marginTop: '24px' }}
               >
-                동료의 1초를 저의 1초보다 소중하게 생각합니다.
+                동료와 사용자의 1초를 저의 1초보다 소중하게 생각합니다.
               </h3>
-              <ul
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2px',
-                  padding: '4px 20px',
-                }}
-              >
-                {/* <li>
-                  동료들이 제 코드를 이해하고 활용하는 데 들이는 시간을 1초라도 줄이기 위해,
-                  <br />
-                  <span style={{ fontWeight: 600 }}>가독성과 직관성</span>을 최우선으로 고려하며
-                  개발에 임합니다.
-                </li> */}
-                <li>
-                  본인인증 폼과 고객 검색 기능을 공통화해 반복 개발을 줄인 경험이 있으며,
-                  <br /> 동료에게
-                  <span style={{ fontStyle: 'italic', color: '#898e96' }}>
-                    {' '}
-                    &ldquo;현준님 덕분에 편하게 개발했어요.&rdquo;
-                  </span>
-                  라는 말을 들을 때 큰 보람과 동기를 얻습니다.
-                </li>
-                <li>
-                  팀 내 논의로만 공유되던 프론트엔드 코드 컨벤션을{' '}
-                  <span style={{ fontWeight: 600 }}>Cursor Rules</span>로 종합해 문서화한 경험이
-                  있습니다.
-                </li>
-              </ul>
               {/* 네트워크 요청 및 리소스 로딩 시간을 분석한
               결과, 배포 환경에서의 설정이 주요 원인이라는 점을 확인했습니다. 이에 따라 CDN region
               설정을 최적화하여 사용자와 가장 가까운 서버에서 리소스를 제공하도록 구성하였고, 이를
@@ -83,9 +54,6 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
               속성 값에 추가만 하도록 구현한 경험이 있습니다. 기본 스타일을 PR을 통해 기록하여 코드
               리뷰 시 스타일 가이드를 공유하고, 추가적인 스타일 적용도 가능하도록 유연성을
               확보했습니다. 이를 통해 팀원들로부터 긍정적인 피드백을 받을 수 있었습니다. */}
-              <h3 style={{ fontWeight: 600, fontSize: '18px', color: '#3c78d8' }}>
-                사용자 경험을 위해 성능과 안정성을 함께 고민합니다.
-              </h3>
               {/* 마지막 목록이라 bootstrap 의 ul 기본 margin-bottom(1rem) 을 없앤다. */}
               <ul
                 style={{
@@ -97,18 +65,23 @@ function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
                 }}
               >
                 <li>
-                  속도가 느리다는 사용자 피드백에서 원인을 찾아,{' '}
-                  <span style={{ fontWeight: 600 }}>서버 응답 속도를 약 21% 개선했습니다.</span>
+                  본인인증 폼과 고객 검색 컴포넌트를 공통화해 반복 개발을 줄였으며,
+                  <br /> 동료에게
+                  <span style={{ fontStyle: 'italic', color: '#898e96' }}>
+                    {' '}
+                    &ldquo;현준님 덕분에 편하게 개발했어요.&rdquo;
+                  </span>
+                  라는 피드백을 받은 경험이 있습니다.
                 </li>
                 <li>
-                  이미지 로딩 지연 문제를 개선하고자{' '}
+                  이미지 로딩 지연을 개선해{' '}
                   <span style={{ fontWeight: 600 }}>
-                    이미지 로딩 속도를 2.8초에서 2.3초로 약 18% 단축했습니다.
+                    로딩 시간을 1.8초에서 1.1초로 약 38% 단축한 경험이 있습니다.
                   </span>
                 </li>
                 <li>
-                  동시 조작·중복 요청 같은 예외 상황을 미리 상상하고 점검하는 것을 중요하게
-                  생각합니다.
+                  동시 조작·중복 요청처럼 실제 사용 중 발생할 수 있는 예외 상황을 미리 확인하고
+                  점검하는 것을 중요하게 생각합니다.
                 </li>
               </ul>
             </p>
