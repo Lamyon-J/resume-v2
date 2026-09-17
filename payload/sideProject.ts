@@ -23,6 +23,28 @@ const sideProject: IProject.Payload = {
       ],
       descriptions: [
         {
+          content: '퍼널(Funnel) 패턴을 활용한 회원가입 과정 플로우 구축',
+          postHref: 'https://hjdevlog0.tistory.com/12',
+          descriptions: [
+            {
+              content:
+                '코드 흐름 파악과 전역 상태 관리의 어려움을 개선하고자 퍼널(Funnel) 패턴을 도입',
+              postHref: '',
+            },
+            {
+              content:
+                '퍼널(Funnel) 패턴을 적용하여 회원 등록 과정(닉네임 설정, 채널 생성, 초대 코드 입력)을 단계별 진행 가능하도록 설계',
+              postHref: '',
+            },
+
+            {
+              content:
+                'react-hook-form과 zodResolver를 도입하여 각 퍼널의 유효성 검증을 상위 컴포넌트에서 통합적으로 관리하도록 개선함.',
+            },
+          ],
+          weight: 'SEMI_BOLD',
+        },
+        {
           content: 'NextAuth 토큰 갱신 로직 개선하여 끊김 없는 사용자 경험 제공',
           postHref: 'https://hjdevlog0.tistory.com/11',
           descriptions: [
@@ -64,28 +86,6 @@ const sideProject: IProject.Payload = {
             //     '주기적으로 토큰 만료를 체크하여 useSession 훅의 update를 호출함으로써 jwt 콜백을 실행하고 세션을 갱신하며 해결',
             //   postHref: '',
             // },
-          ],
-          weight: 'SEMI_BOLD',
-        },
-        {
-          content: '퍼널(Funnel) 패턴을 활용한 회원가입 과정 플로우 구축',
-          postHref: 'https://hjdevlog0.tistory.com/12',
-          descriptions: [
-            {
-              content:
-                '코드 흐름 파악과 전역 상태 관리의 어려움을 개선하고자 퍼널(Funnel) 패턴을 도입',
-              postHref: '',
-            },
-            {
-              content:
-                '퍼널(Funnel) 패턴을 적용하여 회원 등록 과정(닉네임 설정, 채널 생성, 초대 코드 입력)을 단계별 진행 가능하도록 설계',
-              postHref: '',
-            },
-
-            {
-              content:
-                'react-hook-form과 zodResolver를 도입하여 각 퍼널의 유효성 검증을 상위 컴포넌트에서 통합적으로 관리하도록 개선함.',
-            },
           ],
           weight: 'SEMI_BOLD',
         },

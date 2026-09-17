@@ -15,7 +15,6 @@ const project: IProject.Payload = {
       detail: '피부과 온라인 예약 서비스 - 본인인증 로그인 · 마이페이지 담당',
       skill: [
         'Next.js (App Router)',
-        'React',
         'TypeScript',
         'TanStack Query',
         'Zustand',
@@ -186,15 +185,7 @@ const project: IProject.Payload = {
       startedAt: '2025-07',
       endedAt: '2026-04',
       detail: '피부과 전자차트 프로그램 - 접수 현황 보드 · 코드 관리 담당',
-      skill: [
-        'TypeScript',
-        'React',
-        'Next.js',
-        'GraphQL (codegen)',
-        'TanStack Query',
-        'Recoil',
-        'Tailwind',
-      ],
+      skill: ['TypeScript', 'Next.js', 'GraphQL (codegen)', 'TanStack Query', 'Recoil', 'Tailwind'],
       descriptions: [
         {
           content: '접수 현황 보드 신규 개발',
